@@ -1,0 +1,41 @@
+@import "settings";
+
+::-webkit-input-placeholder {
+   color: $input-placeholder-color;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: $input-placeholder-color;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: $input-placeholder-color;
+}
+
+:-ms-input-placeholder {  
+   color: $input-placeholder-color;
+}
+
+input, textarea{
+	color: $input-font-color;
+	font-size: $input-font-size;
+	background-color: $input-bg-color;
+	border-width: $input-border-width;
+	border-color: $input-border-color;
+	border-style: $input-border-style;
+	line-height: $input-line-height;
+	padding: $input-padding;
+	margin: $input-padding/2 0;
+	border-radius: $input-border-radius;
+	width: 100%;
+	max-width: 100%;
+	outline: 0;
+
+	&:focus{
+		color: $input-focus-font-color;
+		background-color: $input-focus-bg-color;
+		border-width: $input-focus-border-width;
+		border-color: $input-focus-border-color;
+		border-style: $input-focus-border-style;
+	}
+}

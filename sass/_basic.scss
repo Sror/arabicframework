@@ -1,0 +1,194 @@
+@import "_settings";
+
+body{
+	background-color: $body-bg-color;
+	color: $body-font-color;
+	font-family: $body-font-family;
+	font-size: emCalc(16px);
+	-webkit-font-smoothing:antialiased;
+	line-height: 1.3em;
+}
+
+a{
+	text-decoration: none;
+	color: $link-color;
+	&:hover{
+		color: darken($link-color, 10%);
+	}
+}
+
+p{
+	line-height: 1.5em;
+	margin: emCalc(5px) 0 emCalc(15px);
+}
+
+ol{
+	@if $text-direction == rtl {
+		padding-right: emCalc(20px);
+    } @else if $text-direction == ltr {
+		padding-left: emCalc(20px);
+	}
+}
+
+ol{
+	list-style: arabic-indic;
+	list-style: -moz-arabic-indic;
+	list-style: -webkit-arabic-indic;
+}
+
+label{
+	font-weight: 500;
+	display: inline-block;
+	font-size: emCalc(16px);
+	margin-top: emCalc(10px);
+	cursor: pointer;	
+}
+
+
+//Media
+img {
+  max-width: 100%;
+
+  /* just in case, to force correct aspet ratio */
+  height: auto !important;
+  -ms-interpolation-mode: bicubic; 
+}
+
+audio {
+  width: 100%;
+}
+
+video {
+  max-width: 100%;
+
+  /* just in case, to force correct aspet ratio */
+  height: auto !important;
+}
+
+.video-wrapper {
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 */
+  position: relative;
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+
+
+//Headings
+
+h1,h2,h3,h4,h5,h6{
+	color: $header-font-color;
+	font-family: $header-font-family;
+	font-weight: $header-font-weight;
+	line-height: 1.2em;
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
+h1{
+	font-size: emCalc(38px);
+}
+
+h2{
+	font-size: emCalc(30px);
+}
+
+h3{
+	font-size: emCalc(24px);
+}
+
+h4{
+	font-size: emCalc(20px);
+}
+
+h5,h6{
+	font-size: emCalc(16px);
+}
+
+//Helper Classes
+.left{
+	float: left !important;
+}
+
+.right{
+	float: right !important;
+}
+
+.round{
+	border-radius: 9999px;
+}
+
+.radius{
+	border-radius: $button-border-radius;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+//Media Query Based classes
+
+@media screen and (max-width : $small-screen ) {
+	.show-sm{
+		display: inheret !important;
+	}
+
+	.hide-sm{
+		display: none !important;
+	}
+	.show-md{
+		display: none !important;
+	}
+	.show-lg{
+		display: none !important;
+	}
+}
+
+@media screen and (max-width : $medium-screen ) {
+	.show-md{
+		display: inheret !important;
+	}
+
+	.hide-md{
+		display: none !important;
+	}
+	.show-sm{
+		display: none !important;
+	}
+	.show-lg{
+		display: none !important;
+	}
+}
+
+@media screen and (max-width : $large-screen ) {
+	.show-lg{
+		display: inheret !important;
+	}
+	
+	.hide-lg{
+		display: none !important;
+	}
+	.show-sm{
+		display: none !important;
+	}
+	.show-md{
+		display: none !important;
+	}
+
+}

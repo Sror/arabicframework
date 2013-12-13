@@ -1,0 +1,66 @@
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+
+@function emCalc($px, $base: $base-font-size) {
+    @return ($px / $base) * 1em;
+}
+
+
+$text-direction: rtl;
+$body-bg-color: #ffffff;
+
+$primary-color: #3498db;
+$secondary-color: #bdc3c7;
+$success-color: #2ecc71;
+$alert-color: #e74c3c;
+
+//Links Color
+$link-color: $primary-color;
+
+
+//Typgoraphy
+$body-font-color: #444;
+$body-font-family: 'Droid Arabic Kufi', "Helvetica Neue", Helvetica, sans-serif;
+$header-font-color: #222;
+$header-font-family: 'Droid Arabic Kufi', "Helvetica Neue", Helvetica, sans-serif;
+$header-font-weight: 100;
+
+
+//Buttons
+$button-small-padding: 5px;
+$button-normal-padding: 10px;
+$button-large-padding: 15px;
+$button-huge-padding: 24px;
+
+$button-border-radius: 4px;
+
+//The Grid
+$base-font-size: 16px;
+
+$row-width: emCalc(1000px);
+$grid-columns: 12;
+
+//Breakpoints
+
+$small-screen: emCalc(360px);
+$medium-screen: emCalc(768px);
+$large-screen: emCalc(1224px);
+
+
+
+//Form Input
+$input-font-color: $body-font-color;
+$input-font-size: emCalc(18px);
+$input-line-height: 1.2em;
+$input-padding: emCalc(10px);
+$input-bg-color: #fbfbfb;
+$input-border-width: 2px;
+$input-border-color: lighten($body-font-color, 40%);
+$input-border-style: solid;
+$input-border-radius: 4px;
+$input-placeholder-color: lighten($body-font-color, 30%);
+
+$input-focus-font-color: darken($body-font-color, 10%);
+$input-focus-bg-color: #fff;
+$input-focus-border-width: 2px;
+$input-focus-border-color: $primary-color;
+$input-focus-border-style: solid;

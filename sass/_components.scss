@@ -1,0 +1,49 @@
+@import "settings";
+
+//Panels
+@mixin panel($bgcolor: $secondary-color, $color: $header-font-color, $padding: 15px){
+	background-color: $bgcolor;
+	color: $color;
+	padding: $padding;
+	margin-bottom: 10px;
+}
+
+.panel{
+	@include panel()
+}
+
+.panel.primary{
+	@include panel($primary-color, #ffffff)
+}
+
+.panel.success{
+	@include panel($success-color, #ffffff)
+}
+
+//Badges
+
+@mixin badge($bgcolor: $secondary-color, $color: $header-font-color){
+	display: inline-block;
+	background-color: $bgcolor;
+	color: $color;
+	font-size: emCalc(13px);
+	line-height: 1;	
+	padding: 5px 6px;
+	text-align: center;
+}
+
+.badge{
+	@include badge()
+}
+
+.badge.primary{
+	@include badge($primary-color, #ffffff)
+}
+
+.badge.success{
+	@include badge($success-color, #ffffff)
+}
+
+.badge.alert{
+	@include badge($alert-color, #ffffff)
+}

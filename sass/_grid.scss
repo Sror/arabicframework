@@ -1,0 +1,149 @@
+@import "settings";
+
+$horizontal: right;
+
+@if $text-direction == rtl {
+    $horizontal: right;
+  } @else if $text-direction == ltr {
+    $horizontal: left;
+  }
+
+body, html{
+	direction: $text-direction;
+	text-align: $horizontal;	
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: relative;
+}
+
+
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  /* Removes padding behaviour on widths */
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/* Attribute selector */
+[class*='columns-'] {
+  float: $horizontal;
+  padding: emCalc(10px);
+}
+/* Floats last ".columns-" to the right */
+[class*='columns-']:last-of-type {
+  padding-left: emCalc(10px);
+	@if $horizontal == right {
+	    float: left;
+	  } @else if $horizontal == left {
+	    float: right;
+	  }
+}
+/* Clearfix */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+div, section, aside, footer, header{
+	width: auto;
+}
+
+.row{
+	width: $row-width;
+	max-width: 100%;
+	padding: 0 emCalc(10px);
+	margin: 0 auto;
+	position: relative;
+
+	.row{
+		width: auto;
+		margin-left: emCalc(-10px);
+		margin-right: emCalc(-10px);
+		margin-top: 0;
+		margin-bottom: 0;
+		padding: 0;
+		max-width: none;
+	}
+}
+
+
+[class*='columns']{
+	float: $horizontal;
+	position: relative;
+}
+
+.centered{
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+	clear: both;
+}
+
+
+@mixin columns($total: $grid-columns, $size: small){
+	$all: $total;
+	@while $total > 0{
+	  .columns-#{$size}-#{$total}{
+	    width: 100%/($all/$total);
+		}
+	  $total: $total - 1
+	}
+	
+}
+
+@mixin offset($total: $grid-columns, $size: small){
+	$all: $total;
+	@while $total > 0{
+	  .offset-#{$size}-#{$total}{
+		margin-#{$horizontal}: 100%/($all/$total);
+		}
+	  $total: $total - 1
+	}
+}
+
+@mixin order($total: $grid-columns, $size: small, $direction: push){
+	$all: $total;
+	@while $total > 0{
+	  .#{$direction}-#{$size}-#{$total}{
+		  	@if $direction == push{
+				#{$horizontal}: 100%/($all/$total);
+		  	} 
+		  	@else if $direction == pull{
+				#{$horizontal}: -100%/($all/$total);
+		  	}
+		}
+	  $total: $total - 1
+	}
+}
+
+
+@include columns();
+@include offset();
+@include order();
+@include order($direction: pull);
+
+
+@media screen and (min-width : $medium-screen) {
+	
+	@include columns($size: medium);
+	@include offset($size: medium);
+	@include order($size: medium);
+	@include order($size: medium, $direction: pull);
+
+}
+
+@media screen and (min-width : $large-screen) {	
+	@include columns($size: large);
+	@include offset($size: large);
+	@include order($size: large);
+	@include order($size: large, $direction: pull);
+
+}
+

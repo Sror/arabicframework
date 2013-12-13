@@ -1,0 +1,74 @@
+@import "settings";
+
+@mixin button($color, $size, $padding: $button-normal-padding, $weight: bold, $font-color: #ffffff){
+	display: inline-block;
+	text-align: center;
+	background-color: $color;
+	color: lighten($color, 80%);
+	color: $font-color;
+	font-size: $size;
+	font-weight: $weight;
+	padding: $padding $padding*2.5;
+	text-decoration: none;
+	margin-bottom: $padding;
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	-ms-transition: all .5s;
+	-o-transition: all .5s;
+	transition: all .5s;
+	&:hover{
+		background-color: darken($color, 10%);
+		color: $font-color;
+	}
+}
+
+.button{
+	@include button($primary-color, emCalc(14px), 10px, bold, #ffffff);
+	
+	&.expand{
+		display: block !important;
+	}
+}
+
+.button.primary{
+	@include button($primary-color, emCalc(14px), 10px, bold, #ffffff);
+}
+
+.button.secondary{
+	@include button($secondary-color, emCalc(14px), 10px, bold, $header-font-color);
+}
+
+.button.success{
+	@include button($success-color, emCalc(14px), 10px, bold, #ffffff);
+}
+
+.button.alert{
+	@include button($alert-color, emCalc(14px), 10px, bold, #ffffff);
+}
+
+.button.round{
+	border-radius: 9999px;
+}
+
+.button.radius{
+	border-radius: $button-border-radius;
+}
+
+.button.small{
+	padding: $button-small-padding $button-small-padding*2.5;
+	font-size: emCalc(12px);
+	margin-bottom: $button-small-padding;
+}
+
+.button.large{
+	padding: $button-large-padding $button-large-padding*2.5;
+	font-size: emCalc(18px);
+	margin-bottom: $button-large-padding;
+}
+
+.button.huge{
+	padding: $button-huge-padding $button-huge-padding*2.5;
+	font-size: emCalc(25px);
+	margin-bottom: $button-huge-padding;
+}
+
