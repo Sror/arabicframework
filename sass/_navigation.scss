@@ -55,7 +55,7 @@ body{
 	}
 }
 
-@media only screen and (max-width: $medium-screen - 1) {
+@media only screen and (max-width: $medium-screen - .1) {
 	body{
 		-webkit-transition: left .5s;
 		-moz-transition: left .5s;
@@ -84,7 +84,6 @@ body{
 			transition: left .5s;
 			li{
 				float: none;
-				padding: 20px 10px;
 				border-right: none;
 				a{
 				}
@@ -102,6 +101,7 @@ body{
 			height: 100%;
 			z-index: 20;
 			color: rgba(255,255,255, .5);
+			cursor: pointer;
 		}
 		.main-nav{
 			ul{

@@ -6,10 +6,22 @@
 	color: $color;
 	padding: $padding;
 	margin-bottom: 10px;
+	position: relative;
 }
 
 .panel{
-	@include panel()
+	@include panel();
+	.close-panel{
+		position: absolute;
+		left: 5px;
+		top: 5px;
+		width: 10px;
+		height: 10px;
+		color: rgba(0,0,0,.4);
+		&:hover{
+			color: rgba(0,0,0,.8);
+		} 
+	}
 }
 
 .panel.primary{
@@ -19,6 +31,8 @@
 .panel.success{
 	@include panel($success-color, #ffffff)
 }
+
+
 
 //Badges
 

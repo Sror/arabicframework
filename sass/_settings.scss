@@ -8,7 +8,7 @@
 $text-direction: rtl;
 $body-bg-color: #ffffff;
 
-$primary-color: #3498db;
+$primary-color: #f1c40f;
 $secondary-color: #bdc3c7;
 $success-color: #2ecc71;
 $alert-color: #e74c3c;
@@ -36,12 +36,12 @@ $button-border-radius: 4px;
 //The Grid
 $base-font-size: 16px;
 
-$row-width: emCalc(1000px);
+$row-width: emCalc(1200px);
 $grid-columns: 12;
 
 //Breakpoints
 
-$small-screen: emCalc(360px);
+$small-screen: emCalc(519px);
 $medium-screen: emCalc(768px);
 $large-screen: emCalc(1224px);
 

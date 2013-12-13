@@ -145,49 +145,49 @@ h5,h6{
 //Media Query Based classes
 
 @media screen and (max-width : $small-screen ) {
-	.show-sm{
+	.show-small{
 		display: inheret !important;
 	}
 
-	.hide-sm{
+	.hide-small{
 		display: none !important;
 	}
-	.show-md{
+	.show-medium{
 		display: none !important;
 	}
-	.show-lg{
+	.show-large{
 		display: none !important;
 	}
 }
 
 @media screen and (max-width : $medium-screen ) {
-	.show-md{
+	.show-medium{
 		display: inheret !important;
 	}
 
-	.hide-md{
+	.hide-medium{
 		display: none !important;
 	}
-	.show-sm{
+	.show-small{
 		display: none !important;
 	}
-	.show-lg{
+	.show-large{
 		display: none !important;
 	}
 }
 
 @media screen and (max-width : $large-screen ) {
-	.show-lg{
+	.show-large{
 		display: inheret !important;
 	}
 	
-	.hide-lg{
+	.hide-large{
 		display: none !important;
 	}
-	.show-sm{
+	.show-small{
 		display: none !important;
 	}
-	.show-md{
+	.show-medium{
 		display: none !important;
 	}
 

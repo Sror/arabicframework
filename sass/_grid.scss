@@ -32,7 +32,13 @@ body, html{
 /* Attribute selector */
 [class*='columns-'] {
   float: $horizontal;
-  padding: emCalc(10px);
+  padding-left: emCalc(10px);
+  padding-right: emCalc(10px);
+}
+.row.collapse{
+	[class*='columns-'] {
+	  padding: 0;
+	}
 }
 /* Floats last ".columns-" to the right */
 [class*='columns-']:last-of-type {

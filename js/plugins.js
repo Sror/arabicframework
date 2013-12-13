@@ -89,11 +89,10 @@ $('nav.horizontal-nav > ul > li > a').click(function(e) {
 
 });
 
-
-
-
-
-
+$('.close-panel').click(function(e) {
+    e.preventDefault();
+    $(this).closest('.panel').fadeOut("slow", function() {});
+});
 
 
 
@@ -158,14 +157,14 @@ $('nav.horizontal-nav > ul > li > a').click(function(e) {
                  tab_content = this.$elem.find('div').not(':first').not(':nth-child(1)').addClass('hideflip');
             }
 
-            var firstdiv = this.$elem.find('#tabs_container');
+            var firstdiv = this.$elem.find('.tabs-container');
             var firstdivheight = firstdiv.find('div:first').height();
 
             var alldivs = this.$elem.find('div:first').find('div');
 
-            alldivs.css({'position': 'absolute','top':'40px'});
+            alldivs.css({'position': 'absolute'});
 
-            firstdiv.css('height',firstdivheight+'px');
+            firstdiv.css('height',firstdivheight+ 40 +'px');
 
             firstchild.addClass('tabulous_active');
 
@@ -173,7 +172,7 @@ $('nav.horizontal-nav > ul > li > a').click(function(e) {
                 e.preventDefault();
 
                 var $options = e.data.myOptions;
-                var effect = $options.effect;
+                var effect = firstdiv.data('effect');
 
                 var mythis = $(this);
                 var thisform = mythis.parent().parent().parent();
@@ -201,7 +200,7 @@ $('nav.horizontal-nav > ul > li > a').click(function(e) {
                 }
 
 
-                firstdiv.css('height',thisdivwidth+'px');
+                firstdiv.css('height',thisdivwidth + 40 +'px');
 
                 
 
